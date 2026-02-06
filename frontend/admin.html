@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin - Cancel Context Collector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="eyebrow">Admin</div>
+      <h1>Accounts</h1>
+      <p class="sub">Create accounts and manage per-account API keys.</p>
+
+      <label class="note">
+        Dashboard API Key
+        <input id="adminKey" type="password" placeholder="X-API-Key" />
+      </label>
+
+      <form id="createAccountForm">
+        <label class="note">
+          Account ID (used in cancel URL)
+          <input id="accountId" type="text" placeholder="e.g. acme-123" />
+        </label>
+
+        <label class="note">
+          Account name
+          <input id="accountName" type="text" required />
+        </label>
+
+        <label class="note">
+          Founder email
+          <input id="accountEmail" type="email" required />
+        </label>
+
+        <label class="note">
+          Slack webhook (optional)
+          <input id="accountSlack" type="text" />
+        </label>
+
+        <div class="actions">
+          <button type="submit">Create account</button>
+          <div class="status" id="adminStatus"></div>
+        </div>
+      </form>
+
+      <hr />
+
+      <div id="accountsList"></div>
+
+      <hr />
+
+      <div class="upgrade-card">
+        <div class="eyebrow">Paid Plan Preview</div>
+        <h2>What you unlock when you upgrade</h2>
+        <ul class="upgrade-list">
+          <li>Self‑serve onboarding + account setup</li>
+          <li>Founder dashboard with trends and exports</li>
+          <li>Billing + plan management</li>
+          <li>Advanced alerts (Slack, email, webhooks)</li>
+          <li>Audit logs and data retention controls</li>
+          <li>Monitoring, backups, and SLAs</li>
+        </ul>
+        <p class="sub">You’re in free beta now. These are planned for the paid release.</p>
+        <a class="cta" href="mailto:rj7350215@gmail.com?subject=Cancel%20Context%20Paid%20Waitlist&body=Please%20add%20me%20to%20the%20paid%20waitlist.%0A%0ACompany:%0AUse%20case:%0A">
+          Join Paid Waitlist
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://cancel:cancel@db:5432/cancel_context
+      REDIS_URL: redis://redis:6379/0
+      AUTO_CREATE_TABLES: "false"
+    depends_on:
+      - db
+      - redis
+
+  worker:
+    build: .
+    command: ["python", "-m", "app.worker"]
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://cancel:cancel@db:5432/cancel_context
+      REDIS_URL: redis://redis:6379/0
+      AUTO_CREATE_TABLES: "false"
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: cancel
+      POSTGRES_PASSWORD: cancel
+      POSTGRES_DB: cancel_context
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+
+volumes:
+  db-data:

@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cancel Subscription</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-account-id="demo" data-api-base="" data-cancel-key="">
+  <main class="wrap">
+    <section class="card">
+      <div class="eyebrow">Cancel Context Collector</div>
+      <h1>Before you go - what went wrong?</h1>
+      <p class="sub">One quick question so we can improve fast.</p>
+
+      <form id="cancelForm">
+        <fieldset class="reasons">
+          <legend>Primary reason</legend>
+          <label class="option">
+            <input type="radio" name="reason" value="too_expensive" required />
+            Too expensive
+          </label>
+          <label class="option">
+            <input type="radio" name="reason" value="missing_feature" />
+            Missing feature
+          </label>
+          <label class="option">
+            <input type="radio" name="reason" value="confusing" />
+            Confusing to use
+          </label>
+          <label class="option">
+            <input type="radio" name="reason" value="bug" />
+            Bug or error
+          </label>
+          <label class="option">
+            <input type="radio" name="reason" value="no_longer_needed" />
+            No longer needed
+          </label>
+        </fieldset>
+
+        <label class="note">
+          Optional note
+          <textarea id="note" name="note" rows="2" maxlength="240" placeholder="One line is perfect"></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">Confirm cancellation</button>
+          <div class="status" id="status"></div>
+        </div>
+      </form>
+
+      <p class="fine-print">We only collect lightweight context - no full session replay.</p>
+    </section>
+  </main>
+
+  <script src="cancel.js"></script>
+</body>
+</html>

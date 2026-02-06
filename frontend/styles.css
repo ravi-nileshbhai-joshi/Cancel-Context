@@ -1,0 +1,250 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --ink: #1b1f24;
+  --muted: #5b6673;
+  --accent: #1f6f5c;
+  --accent-2: #e08d3c;
+  --shadow: 0 24px 60px rgba(20, 24, 30, 0.12);
+  --radius: 18px;
+  --focus: rgba(31, 111, 92, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Calibri", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(31, 111, 92, 0.12), transparent 50%),
+    radial-gradient(circle at 90% 10%, rgba(44, 95, 155, 0.14), transparent 55%),
+    linear-gradient(180deg, #f4f6f8 0%, #eef2f6 100%);
+  min-height: 100vh;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+}
+
+.card {
+  width: min(640px, 92vw);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(27, 31, 36, 0.08);
+  animation: fadeUp 420ms ease;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+h1,
+h2 {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.sub {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.option input {
+  margin: 0;
+}
+
+.option:hover {
+  background: rgba(31, 111, 92, 0.06);
+}
+
+.note {
+  display: block;
+  margin: 12px 0 20px;
+  font-weight: 600;
+}
+
+.note textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(27, 31, 36, 0.16);
+  font-family: inherit;
+  resize: vertical;
+  background: #fbfcfd;
+}
+
+.note input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(27, 31, 36, 0.16);
+  font-family: inherit;
+  background: #fbfcfd;
+}
+
+.note textarea:focus,
+.note input:focus {
+  outline: none;
+  border-color: rgba(31, 111, 92, 0.45);
+  box-shadow: 0 0 0 3px var(--focus);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+  box-shadow: 0 12px 26px rgba(31, 111, 92, 0.18);
+}
+
+button:hover {
+  background: #1a5f4e;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status {
+  font-size: 14px;
+  color: var(--muted);
+  min-height: 18px;
+}
+
+.fine-print {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(27, 31, 36, 0.08);
+  margin: 20px 0;
+}
+
+.account-row {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(27, 31, 36, 0.08);
+  margin-bottom: 10px;
+  background: #fbfcfd;
+}
+
+.account-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.rotate-btn {
+  align-self: start;
+  width: fit-content;
+  background: var(--accent-2);
+}
+
+.upgrade-card {
+  margin-top: 8px;
+}
+
+.upgrade-list {
+  margin: 12px 0 12px 18px;
+  padding: 0;
+  color: var(--ink);
+}
+
+.upgrade-list li {
+  margin: 6px 0;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 12px 26px rgba(31, 111, 92, 0.18);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.cta:hover {
+  background: #1a5f4e;
+  transform: translateY(-1px);
+}
+
+.success h2 {
+  margin-bottom: 8px;
+}
+
+.success .sub {
+  margin-bottom: 18px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
