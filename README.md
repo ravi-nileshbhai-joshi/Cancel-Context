@@ -83,6 +83,12 @@ Use `docker-compose.yml` to run API, worker, Postgres, and Redis together.
 **Admin UI**
 Open `http://localhost:8000/admin.html` and enter `DASHBOARD_API_KEY` to manage accounts and API keys.
 
+**Waitlist Deployment (Vercel)**
+This repo includes a static waitlist landing page in `cancel context waitlist/`.
+1. Import the repo in Vercel.
+2. Set the root directory to the repo root (not the folder).
+3. Vercel will use `vercel.json` to serve the waitlist page.
+
 **API**
 - `POST /api/cancel/{account_id}`
 - `GET /api/dashboard/cancellations`

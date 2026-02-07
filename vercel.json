@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "outputDirectory": "cancel context waitlist",
+  "builds": [
+    { "src": "cancel context waitlist/index.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" }
+  ]
+}
