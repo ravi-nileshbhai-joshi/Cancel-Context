@@ -104,6 +104,20 @@ h2 {
   transform: translateY(-1px);
 }
 
+.waitlist .success {
+  display: none;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(31, 111, 92, 0.08);
+  color: #1a5f4e;
+  font-weight: 600;
+}
+
+.waitlist .success.show {
+  display: block;
+}
+
 .fine {
   margin: 0;
   font-size: 12px;
