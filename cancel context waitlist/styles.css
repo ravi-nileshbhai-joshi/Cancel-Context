@@ -1,0 +1,154 @@
+﻿:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --ink: #14181f;
+  --muted: #5a6674;
+  --accent: #1f6f5c;
+  --accent-2: #e08d3c;
+  --shadow: 0 20px 50px rgba(20, 24, 31, 0.12);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Calibri", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(31, 111, 92, 0.12), transparent 45%),
+    radial-gradient(circle at 92% 12%, rgba(44, 95, 155, 0.14), transparent 55%),
+    linear-gradient(180deg, #f6f7f9 0%, #eef2f5 100%);
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+  display: grid;
+  gap: 36px;
+}
+
+.hero .card,
+.supporter .card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px;
+  border: 1px solid rgba(20, 24, 31, 0.08);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+h1,
+h2 {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.sub {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.waitlist {
+  display: grid;
+  gap: 14px;
+}
+
+.waitlist label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.waitlist input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(20, 24, 31, 0.15);
+  font: inherit;
+  background: #fbfcfd;
+}
+
+.waitlist input:focus {
+  outline: none;
+  border-color: rgba(31, 111, 92, 0.45);
+  box-shadow: 0 0 0 3px rgba(31, 111, 92, 0.2);
+}
+
+.waitlist button {
+  margin-top: 4px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(31, 111, 92, 0.18);
+  transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
+}
+
+.waitlist button:hover {
+  background: #1a5f4e;
+  transform: translateY(-1px);
+}
+
+.fine {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.problem,
+.solution {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius);
+  padding: 26px 30px;
+  border: 1px solid rgba(20, 24, 31, 0.06);
+}
+
+.problem ul,
+.solution ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink);
+}
+
+.problem li,
+.solution li {
+  margin: 8px 0;
+}
+
+.supporter .price {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 8px 0 4px;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+@media (max-width: 640px) {
+  .hero .card,
+  .supporter .card {
+    padding: 28px;
+  }
+
+  .problem,
+  .solution {
+    padding: 22px;
+  }
+}
