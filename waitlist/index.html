@@ -25,7 +25,7 @@
             <span>Your SaaS URL</span>
             <input type="url" name="saas_url" placeholder="https://yourapp.com" required />
           </label>
-          <button type="submit">Request early access</button>
+          <button type="submit" id="waitlistSubmit">Request early access</button>
           <p class="fine">Early supporter plan: $49 one-time, lifetime discount.</p>
           <div class="success" id="waitlistSuccess" role="status" aria-live="polite">
             Thanks — you're on the waitlist. We'll reach out soon.
@@ -66,11 +66,44 @@
     (function () {
       const form = document.getElementById("waitlistForm");
       const success = document.getElementById("waitlistSuccess");
-      if (!form || !success) return;
-      form.addEventListener("submit", function (event) {
+      const submit = document.getElementById("waitlistSubmit");
+      if (!form || !success || !submit) return;
+      form.addEventListener("submit", async function (event) {
         event.preventDefault();
-        success.classList.add("show");
-        form.reset();
+        submit.disabled = true;
+        submit.textContent = "Submitting...";
+
+        const payload = {
+          email: form.email.value.trim(),
+          saas_url: form.saas_url.value.trim()
+        };
+
+        try {
+          const response = await fetch("/api/waitlist", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await response.json().catch(function () {
+            return null;
+          });
+
+          if (!response.ok) {
+            const message = (data && (data.error || data.detail)) || "Submit failed.";
+            throw new Error(message);
+          }
+
+          success.textContent = "Thanks — you're on the waitlist. We'll reach out soon.";
+          success.classList.add("show");
+          form.reset();
+        } catch (err) {
+          success.textContent = err && err.message ? err.message : "Something went wrong. Please try again.";
+          success.classList.add("show");
+        } finally {
+          submit.disabled = false;
+          submit.textContent = "Request early access";
+        }
       });
     })();
   </script>

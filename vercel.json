@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "waitlist/**", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/styles.css", "dest": "/waitlist/styles.css" },
-    { "src": "/(.*)", "dest": "/waitlist/index.html" }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/waitlist/(.*)", "destination": "/waitlist/$1" },
+    { "source": "/", "destination": "/waitlist/index.html" },
+    { "source": "/(.*)", "destination": "/waitlist/index.html" }
   ]
 }

@@ -118,6 +118,12 @@ h2 {
   display: block;
 }
 
+.waitlist button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .fine {
   margin: 0;
   font-size: 12px;

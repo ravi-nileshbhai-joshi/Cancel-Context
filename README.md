@@ -89,6 +89,11 @@ This repo includes a static waitlist landing page in `cancel context waitlist/`.
 2. Set the root directory to the repo root (not the folder).
 3. Vercel will use `vercel.json` to serve the waitlist page.
 
+**Waitlist Form Capture (Supabase)**
+The waitlist form posts to `/api/waitlist` and inserts into Supabase.
+- Set `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` in Vercel.
+- Optional: `SUPABASE_TABLE` (default: `waitlist`).
+
 **API**
 - `POST /api/cancel/{account_id}`
 - `GET /api/dashboard/cancellations`
